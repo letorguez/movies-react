@@ -17,7 +17,8 @@ export function Search() {
         <input
           className={styles.searchInput}
           type="text"
-          value={search}
+          value={search ?? ""}
+          autoFocus
           placeholder="Movie title"
           aria-label="Search Movies"
           onChange={(e) => {
