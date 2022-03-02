@@ -2,20 +2,26 @@ import { get } from "../utils/httpClient";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styles from "./MovieDetails.module.css";
+import { Spinner } from "../components/Spinner";
+import { useQuery } from "../hooks/useQuery";
 
 export function MovieDetails() {
   const format = new Intl.ListFormat("en");
   const { movieId } = useParams();
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const [pelicula, setMovie] = useState(null);
+    
+ 
   useEffect(() => {
+    setIsLoading(true);
+
     get("/movie/" + movieId).then((data) => {
       setMovie(data);
+      setIsLoading(false);
     });
   }, [movieId]);
-
-  if (!pelicula) {
-    return null;
+  if (isLoading) {
+    return <Spinner />;
   }
   const imageUrl = "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;
   return (
