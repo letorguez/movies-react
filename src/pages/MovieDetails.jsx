@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styles from "./MovieDetails.module.css";
 import { Spinner } from "../components/Spinner";
-import { useQuery } from "../hooks/useQuery";
+import { getMovieImg } from "../utils/getMovieImg";
 
 export function MovieDetails() {
   const format = new Intl.ListFormat("en");
@@ -23,7 +23,7 @@ export function MovieDetails() {
   if (isLoading) {
     return <Spinner />;
   }
-  const imageUrl = "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;
+  const imageUrl = getMovieImg(pelicula.poster_path, 500)
   return (
     <div className={styles.detailsContainer}>
       <img
