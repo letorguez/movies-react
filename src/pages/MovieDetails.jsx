@@ -1,14 +1,16 @@
 import { get } from "../utils/httpClient";
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react"; */
 import { useParams } from "react-router";
 import styles from "./MovieDetails.module.css";
 import { Spinner } from "../components/Spinner";
 import { getMovieImg } from "../utils/getMovieImg";
+import { useQuery } from "react-query";
 
 export function MovieDetails() {
   const format = new Intl.ListFormat("en");
   const { movieId } = useParams();
-  const [isLoading, setIsLoading] = useState(true);
+  const {data: pelicula, isLoading} = useQuery(["movieDetails", movieId], () => get("/movie/" + movieId));
+  /* const [isLoading, setIsLoading] = useState(true);
   const [pelicula, setMovie] = useState(null);
     
  
@@ -19,7 +21,7 @@ export function MovieDetails() {
       setMovie(data);
       setIsLoading(false);
     });
-  }, [movieId]);
+  }, [movieId]); */
   if (isLoading) {
     return <Spinner />;
   }
