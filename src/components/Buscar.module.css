@@ -1,11 +1,11 @@
-.searchContainer{
+.buscarContainer{
     display: flex;
     justify-content: center;
 }
-.searchBox{
+.buscarCaja{
     position: relative;
 }
-.searchButton{
+.buscarBtn{
     position: absolute;
     right: 8px;
     top: 0;
@@ -14,7 +14,7 @@
     background: none;
     color: #222;
 }
-.searchInput{
+.buscarInput{
     font-size: 1.2rem;
     height: 35px;
     border-radius: 10px;

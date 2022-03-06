@@ -1,4 +1,4 @@
-.detailsContainer{
+.detallesContainer{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -10,15 +10,15 @@
     height: 80%;
 }
 
-.movieImage{
+.peliculaImagen{
     border-radius: 15px;
 }
 
-.movieDetails{
+.peliculaDetalles{
     font-size: 1.5rem;
 }
 
-.firsItem{
+.primerItem{
     margin-top: 0;
 }
 
