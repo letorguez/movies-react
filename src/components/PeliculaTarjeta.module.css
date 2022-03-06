@@ -1,11 +1,29 @@
+.detalles{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px;
+}
+
+.rank{
+    padding: 0 5px;
+    width: 40px;
+    height: auto;
+    border-radius: 5px;
+}
+
 .peliculaTarjeta{
     list-style: none;
     font-size: 1.5rem;
     text-align: center;
     transition: all .25s ease-out;
+    border-radius: 10px;
 }
 .peliculaTarjeta:hover{
     transform: scale(1.1);
+    box-shadow: 0px 0px 20px 10px;
 }
 
 .peliculaImagen {
